@@ -78,7 +78,7 @@ func main() {
 			log.Println("ctx done")
 			go func() {
 				log.Println("server1 shutdown start! ")
-				if err := server1.shutdown(nil); err != nil {
+				if err := server1.shutdown(context.Background()); err != nil {
 					log.Println("server1 shutdown err: ", err)
 				}
 				log.Println("server1 shutdown end! ")
